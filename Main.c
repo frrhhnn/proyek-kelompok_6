@@ -16,6 +16,7 @@ int main(int manyArgc, char *argc[])
     if(manyArgc == 1){
         regis reg;
         printf("\n");
+        printf("*************************************************************\n");
         printf("*****\t\tWellcome to our game quizz\t\t*****\n");
         printf("Silahkan registrasi terlebih dahulu sebelum memulai game quiz <3\n");
         printf("Nama\t\t: "); gets(reg.nama);
