@@ -16,7 +16,6 @@ int main(int manyArgc, char *argc[])
     if(manyArgc == 1){
         regis reg;
         printf("\n");
-        printf("*************************************************************\n");
         printf("*****\t\tWellcome to our game quizz\t\t*****\n");
         printf("Silahkan registrasi terlebih dahulu sebelum memulai game quiz <3\n");
         printf("Nama\t\t: "); gets(reg.nama);
@@ -47,5 +46,37 @@ int main(int manyArgc, char *argc[])
     }
 
     if(manyArgc == 3)
+        {
+        regis reg;
+
+        char usernameInput[10], passwordInput[10];
+        strcpy(usernameInput, argc[1]);
+        strcpy(passwordInput, argc[2]);
+        
+        FILE *fpr = fopen("database/login.bin", "rb");
+
+        fread(reg.username, sizeof(char), sizeof(reg.username)/sizeof(char), fpr);
+
+        fclose(fpr);
+
+        char *string[3];
+        char username[20], password[20];
+        int ctrl = 0;
+
+        string[0] = strtok(reg.username, "#");
+        while (string[ctrl++] != NULL){
+            string[ctrl] = strtok(NULL, "#");
+        }
+
+        strcpy(username, string[0]);
+        strcpy(password, string[1]);
+
+        if( (strcmp(usernameInput, username) == 0 ) && (strcmp(passwordInput, password) == 0)) {
+            printf("Selamat anda berhasil login !\n");
+        } 
+        else{
+            printf("Anda Gagal login !\n");
+    }
+    }
     return 0;
 }
