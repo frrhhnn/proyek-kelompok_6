@@ -125,6 +125,42 @@ int main() {
     printf("D) New York\n");
     printf("jawaban Anda: ");
     }
+
+     scanf("%s", jawaban);
+     jawaban[0] = toupper(jawaban[0]);
+
+    if (jawaban[0] == 'A' || jawaban[0] == 'B' || jawaban[0] == 'C' || jawaban[0] == 'D') {
+    } else {
+    printf("Jawaban yang anda masukkan tidak sesuai opsi jawaban.\n");
+    printf("Harap memasukkan jawaban sesuai dengan opsi jawaban ('A','B','C','D')\n");
+    continue; 
+    }
+        
+        if (strcmp(jawaban, pertanyaans[pertanyaan_saat_ini].jawaban) == 0) {
+          
+            printf("Benar! kamu mendapatkan $%d nilai.\n", level * 100);
+            score += level * 100;
+            level++;
+            pertanyaan_saat_ini++;
+        } else {
+            printf("Maaf, itu tidak benar. Jawaban yang benar adalah %s.\n", pertanyaans[pertanyaan_saat_ini].jawaban);
+            printf("********************************************************************************\n");
+            printf("Anda mendapatkan total $%d. Semoga lain kali lebih beruntung!\n", score);
+            printf("********************************************************************************\n");
+            break;
+        }
+        if (pertanyaan_saat_ini == 5) {
+            printf("Selamat!!!!!! Anda memenangkan permainan dan mendapatkan $%d!\n", score);
+            printf("Terima kasih telah bermain. Sampai jumpa lagi!\n");
+            break;
+        }
+    
+    }
+    
+    return 0;
+}
+
+}   
         
 typedef struct registration
 {
