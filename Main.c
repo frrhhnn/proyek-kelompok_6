@@ -48,6 +48,84 @@ int main() {
     strcpy(pertanyaans[4].pertanyaan, "Kota mana yang berjulik 'Crossroads of the pacific' dan 'The Big pineapple'?");
     strcpy(pertanyaans[4].jawaban, "D");
     pertanyaans[4].level = 5;
+    
+    printf("********************************************************************************\n");
+
+    printf("*\t #  # # ### ###     # # ### #    #  # # ##   #  # #     # # ###        *\n*\t# # # #  #    #     # # #   #   # # ### # # # # # #     # #  #         *\n*\t# # # #  #   #      ##  ##  #   # # ### ##  # # ##      # #  #         *\n*\t ## # #  #  #       # # #   #   # # # # #   # # # #     # #  #         *\n*\t  # ### ### ###     # # ### ###  #  # # #    #  # #      #  ###        *\n*");
+    
+    printf("*******************************************************************************\n");
+    // Inisialisasi variabel game
+
+    int level = 1;
+    int score = 0;
+    int batas_level = 5 ;
+    int pertanyaan_saat_ini = 0;
+    char jawaban[50];
+    int pilihan;
+   
+    // Mulai game
+    printf("\n\t\t    SELAMAT DATANG DI QUIZZ KELOMPOK VI  \n");
+    printf("********************************************************************************\n");
+    printf("Kamu akan disediakan 5 pertanyaan dengan tingkat level yang berbeda,\n");
+    printf("********************************************************************************\n");
+    printf("dengan meningkatnya tingkat kesulitan saat Anda maju.\n");
+    printf("********************************************************************************\n");
+    printf("Setiap jawaban yang benar akan memberi Anda poin sesuai dengan tingkat kesulitan soalnya\n");
+    printf("********************************************************************************\n");
+    printf("Selamat Bermain!!!!!\n");
+    printf("********************************************************************************\n");
+
+
+     while (1) { 
+        printf("\nTekan angka untuk melanjutkan permainan, atau yang lain untuk keluar dari permainan: ");
+        scanf("%s", input);
+        if (isdigit(input[0])) { 
+            break;
+            }else {
+            return 0;
+        }
+     }
+    
+    for (int i = 0; i <= batas_level; i++) {
+        printf("\nLevel %d: %s\n", level, pertanyaans[pertanyaan_saat_ini].pertanyaan);
+
+    if(level == 1)
+    {
+    printf("A) Argentina \n");
+    printf("B) Prancis \n");
+    printf("C) Arab Saudi\n");
+    printf("D) Indonesia\n");
+    printf("jawaban Anda: ");
+    }else if (level == 2)
+    {
+    printf("A) Mumbai \n");
+    printf("B) New Delhi \n");
+    printf("C) Maladew \n");
+    printf("D) Ankara\n");
+    printf("jawaban Anda: ");
+    }else if (level == 3)
+    {
+    printf("A) Huruf O \n");
+    printf("B) angka 1\n");
+    printf("C) huruf B \n");
+    printf("D) Huruf M\n");
+    printf("jawaban Anda: ");
+    }else if(level == 4)
+    {
+    printf("A) Danau Toba \n");
+    printf("B) Danau Baikal \n");
+    printf("C) Danau Kaspia \n");
+    printf("D) Danau Victoria\n");
+    printf("jawaban Anda: ");
+    }else if(level == 5)
+    {
+    printf("A) Rusia \n");
+    printf("B) Indonesia 1 \n");
+    printf("C) China \n");
+    printf("D) New York\n");
+    printf("jawaban Anda: ");
+    }
+        
 typedef struct registration
 {
     char nama[20];
