@@ -12,21 +12,24 @@ typedef struct {
 
 int main() {
 
-   int input[0];
-   while (1) {                                                                                                                                             
+int input[0];
+    char masukkan;
+    while (1) {                                                                                                                                             
 
-    printf("\nTekan angka manapun untuk melanjutkan permainan, atau huruf 'n' untuk membatalkan dari permainan: \n");
-        scanf("%s", input);
-        if (isdigit(input[0])) { 
-        } else if (input[0] == 'n' || input[0] == 'N') { // menanyakan apakah pengguna yakin ingin keluar dari permainan
-            printf("\nApakah kamu yakin ingin keluar dari permainan? (Y/N): ");
-            scanf("%s", input);
-            if (input[0] == 'y' || input[0] == 'Y') {
-                return 0; // keluar dari permainan
-            }
-        } else {
-            return 0;
-        }
+printf("\nTekan angka manapun untuk melanjutkan permainan, atau huruf 'n' untuk membatalkan dari permainan: ");
+scanf("%s", input);
+        
+if (isdigit(input[0])) { 
+} else if (input[0] == 'n' || input[0] == 'N') { // menanyakan apakah pengguna yakin ingin keluar dari permainan
+    printf("\nApakah kamu yakin ingin keluar dari permainan? (Y/N): ");
+    scanf("%s", input);
+  
+    if (input[0] == 'y' || input[0] == 'Y') {
+     return 0; 
+ }
+    } else {
+    return 0;
+ }
 
     pertanyaan pertanyaans[15];
     strcpy(pertanyaans[0].pertanyaan, "Siapa Pemenang piala dunia 2024?");
@@ -54,7 +57,6 @@ int main() {
     printf("*\t #  # # ### ###     # # ### #    #  # # ##   #  # #     # # ###        *\n*\t# # # #  #    #     # # #   #   # # ### # # # # # #     # #  #         *\n*\t# # # #  #   #      ##  ##  #   # # ### ##  # # ##      # #  #         *\n*\t ## # #  #  #       # # #   #   # # # # #   # # # #     # #  #         *\n*\t  # ### ### ###     # # ### ###  #  # # #    #  # #      #  ###        *\n*");
     
     printf("*******************************************************************************\n");
-    // Inisialisasi variabel game
 
     int level = 1;
     int score = 0;
@@ -63,7 +65,6 @@ int main() {
     char jawaban[50];
     int pilihan;
    
-    // Mulai game
     printf("\n\t\t    SELAMAT DATANG DI QUIZZ KELOMPOK VI  \n");
     printf("********************************************************************************\n");
     printf("Kamu akan disediakan 5 pertanyaan dengan tingkat level yang berbeda,\n");
@@ -142,23 +143,57 @@ int main() {
             score += level * 100;
             level++;
             pertanyaan_saat_ini++;
+     
+    if (pertanyaan_saat_ini == 5){
+         printf("SELAMATT!!!!!! Anda Memenangkan Permainan dan Mendapatkan total $%d!\n", score);
+            printf("********************************************************************************\n");
+            printf("Terima kasih telah bermain. Sampai jumpa lagi!\n");
+            printf("********************************************************************************\n");
+            break;
+    }
+      printf("Apakah Anda ingin melanjutkan ke pertanyaan berikutnya? (y/n): ");
+      scanf(" %c", &masukkan);
+      printf("********************************************************************************\n");
+     if (masukkan == 'y') {
+            printf("Baiklah lanjut ke pertanyaan berikutnya..... \n");
+            printf("********************************************************************************\n");
+         
+        } else if (masukkan == 'n') {
+            printf("Silakan istirahat sebentar dan kembali lagi nanti.\n");
+            printf("********************************************************************************\n");
+            break;   
+    } else {
+            printf("MAAF Input yang Anda berikan tidak valid!\n");
+            printf("Harap maukkan 'y' atau 'n' : ");
+            scanf(" %c", &masukkan);
+            printf("********************************************************************************\n");
+            if(masukkan == 'y'){
+            printf("Baiklah, berikutnya pertanyaan...\n");
+            printf("********************************************************************************\n");
+            }
+         else if (masukkan == 'n') {
+            printf("Silakan istirahat sebentar dan kembali lagi nanti.\n");
+            printf("********************************************************************************\n");
+            break;
+        }else {
+            printf("Anda salah menginput sebanyak dua kali silahkan coba lagi nanti, terima kasih...\n");
+            printf("********************************************************************************\n");
+            return 0;
+        }
+    }   
+
         } else {
             printf("Maaf, itu tidak benar. Jawaban yang benar adalah %s.\n", pertanyaans[pertanyaan_saat_ini].jawaban);
             printf("********************************************************************************\n");
             printf("Anda mendapatkan total $%d. Semoga lain kali lebih beruntung!\n", score);
             printf("********************************************************************************\n");
             break;
-        }
-        if (pertanyaan_saat_ini == 5) {
-            printf("Selamat!!!!!! Anda memenangkan permainan dan mendapatkan $%d!\n", score);
-            printf("Terima kasih telah bermain. Sampai jumpa lagi!\n");
-            break;
-        }
+         }
     
-    }
+       }
     
     return 0;
-}
+    }
 
 }   
         
