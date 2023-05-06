@@ -81,7 +81,9 @@ int main(int manyArgc, char *argc[])
         strcpy(password, string[1]);
 
         if( (strcmp(usernameInput, username) == 0 ) && (strcmp(passwordInput, password) == 0)) {
+            printf("*****************************\n");
             printf("Selamat anda berhasil login !\n");
+            printf("*****************************\n");
             
             int input[0];
             char masukkan;
@@ -277,6 +279,7 @@ int main(int manyArgc, char *argc[])
             }
             else {
                 printf("Anda Gagal login !\n");
+                printf("Perhatikan kembali username dan passsword yang anda mmasukkan !\n");
             }
     }
     return 0;
