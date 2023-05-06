@@ -13,8 +13,22 @@ typedef struct {
 int main() {
 
 int input[0];
-    char masukkan;
-    while (1) {                                                                                                                                             
+char masukkan;
+while (1) { 
+printf("                                          ,--,                                                                                                           \n");
+printf("                                       ,---.'|       ,----..                                                ,--.                                         \n");
+printf("                                       |   | :      /   /   /     ,---,           ,---,       ,---,       ,--.'|  ,----..                                \n");
+printf("               ,--.  ,--.  ,--.        :   : |     /   .     :   '  .' /        .'  .' `/  ,`--.' |   ,--,:  : | /   /   /          .--,  .--,  .--,     \n");
+printf("              /  /| /  /| /  /|        |   ' :    .   /   ;.  / /  ;    '.    ,---.'     / |   :  :,`--.'`|  ' :|   :     :         |/  / |/  / |/  /    \n");
+printf("             '  / ''  / ''  / '        ;   ; '   .   ;   /  ` ;:  :       /   |   |  .`/  |:   |  '|   :  :  | |.   |  ;. /         ` /  `` /  `` /  `   \n");
+printf("            /  / //  / //  / /         '   | |__ ;   |  ; / ; |:  |   //   /  :   : |  '  ||   :  |:   |   / | :.   ; /--`           / /  // /  // /  /  \n");
+printf("           /  / ,/  / ,/  / ,          |   | :.'||   :  | ; | '|  :  ' ;.   : |   ' '  ;  :'   '  ;|   : '  '; |;   | ;  __           , /  // /  /, /  / \n");
+printf("           / '/ // '/ // '/ /          :   :    ;.   |  ' ' ' :|  |  ;/  /   /'   | ;  .  ||   |  |'   ' ;.    ;|   : |.' .'          / /` // /` // /` / \n");
+printf("            /  / '/  / '/  / '         |   |  ./ '   ;  / /   |'  :  | /  / ,'|   | :  |  ''   :  ;|   | | /   |.   | '_.' :         ` /  /` /  /` /  /  \n");
+printf("             /  . |/  . |/  . |        ;   : ;    /   /  ',  / |  |  '  '--'  '   : | /  ; |   |  ''   : |  ; .''   ; : /  |        | .  /| .  /| .  /   \n");
+printf("              /__/ /__/. /__/.         |   ,/      ;   :    /  |  :  :        |   | '` ,/  '   :  ||   | '`--'  '   | '/  .'        ./__/ ./__/ ./__/    \n");
+printf("                                       '---'        /    .'    |  | ,'        ;   :  .'    ;   |.' '   : |      |   :    /                               \n");
+printf("                                                     `---`     `--''          |   ,.'      '---'   ;   |.'      |_ _| .'                                 \n");                                                                                                                                            
 
 printf("\nTekan angka manapun untuk melanjutkan permainan, atau huruf 'n' untuk membatalkan dari permainan: ");
 scanf("%s", input);
@@ -66,15 +80,15 @@ if (isdigit(input[0])) {
     int pilihan;
    
     printf("\n\t\t    SELAMAT DATANG DI QUIZZ KELOMPOK VI  \n");
-    printf("********************************************************************************\n");
+    printf("****************************************************************************************\n");
     printf("Kamu akan disediakan 5 pertanyaan dengan tingkat level yang berbeda,\n");
-    printf("********************************************************************************\n");
+    printf("****************************************************************************************\n");
     printf("dengan meningkatnya tingkat kesulitan saat Anda maju.\n");
-    printf("********************************************************************************\n");
+    printf("****************************************************************************************\n");
     printf("Setiap jawaban yang benar akan memberi Anda poin sesuai dengan tingkat kesulitan soalnya\n");
-    printf("********************************************************************************\n");
+    printf("****************************************************************************************\n");
     printf("Selamat Bermain!!!!!\n");
-    printf("********************************************************************************\n");
+    printf("****************************************************************************************\n");
 
 
      while (1) { 
@@ -137,19 +151,19 @@ if (isdigit(input[0])) {
     continue; 
     }
         
-        if (strcmp(jawaban, pertanyaans[pertanyaan_saat_ini].jawaban) == 0) {
+    if (strcmp(jawaban, pertanyaans[pertanyaan_saat_ini].jawaban) == 0) {
           
-            printf("Benar! kamu mendapatkan $%d nilai.\n", level * 100);
-            score += level * 100;
-            level++;
-            pertanyaan_saat_ini++;
+     printf("Benar! kamu mendapatkan $%d nilai.\n", level * 100);
+        score += level * 100;
+        level++;
+     pertanyaan_saat_ini++;
      
     if (pertanyaan_saat_ini == 5){
          printf("SELAMATT!!!!!! Anda Memenangkan Permainan dan Mendapatkan total $%d!\n", score);
-            printf("********************************************************************************\n");
-            printf("Terima kasih telah bermain. Sampai jumpa lagi!\n");
-            printf("********************************************************************************\n");
-            break;
+         printf("********************************************************************************\n");
+         printf("Terima kasih telah bermain. Sampai jumpa lagi!\n");
+         printf("********************************************************************************\n");
+         break;
     }
       printf("Apakah Anda ingin melanjutkan ke pertanyaan berikutnya? (y/n): ");
       scanf(" %c", &masukkan);
@@ -197,13 +211,13 @@ if (isdigit(input[0])) {
 
 }   
         
-typedef struct registration
-{
-    char nama[20];
-    char pekerjaan[20];
-    char username[20];
-    char password[20];
-} regis;
+    typedef struct registration
+    {
+        char nama[20];
+        char pekerjaan[20];
+        char username[20];
+        char password[20];
+    } regis;
 
 
 int main(int manyArgc, char *argc[])
