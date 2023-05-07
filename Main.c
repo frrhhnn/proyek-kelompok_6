@@ -84,9 +84,13 @@ int main(int manyArgc, char *argc[])
             printf("*****************************\n");
             printf("Selamat anda berhasil login !\n");
             printf("*****************************\n");
-            
+        }  else {
+                printf("Anda Gagal login !\n");
+                printf("Perhatikan kembali username dan passsword yang anda mmasukkan !\n");
+         }
             int input[0];
-            char masukkan;
+            char input1;
+            int input2;
             while (1) { 
             printf("                                          ,--,                                                                                                           \n");
             printf("                                       ,---.'|       ,----..                                                ,--.                                         \n");
@@ -104,10 +108,10 @@ int main(int manyArgc, char *argc[])
             printf("                                                     `---`     `--''          |   ,.'      '---'   ;   |.'      |_ _| .'                                 \n");                                                                                                                                            
 
             printf("\nTekan angka manapun untuk melanjutkan permainan, atau huruf 'n' untuk membatalkan dari permainan: ");
-            scanf("%s", input);
+            scanf("%s",&input1);
         
-            if (isdigit(input[0])) { 
-            } else if (input[0] == 'n' || input[0] == 'N') { // menanyakan apakah pengguna yakin ingin keluar dari permainan
+            if (isdigit(input1)) { 
+            } else if (input1 == 'n' || input1 == 'N') { // menanyakan apakah pengguna yakin ingin keluar dari permainan
                 printf("\nApakah kamu yakin ingin keluar dari permainan? (Y/N): ");
                 scanf("%s", input);
                 if (input[0] == 'y' || input[0] == 'Y') {
@@ -164,19 +168,20 @@ int main(int manyArgc, char *argc[])
             printf("Selamat Bermain!!!!!\n");
             printf("****************************************************************************************\n");
 
+            printf("Masukkan angka 1 untuk masuk ke permainan atau yang lain untuk membatalkan permainan:");
+            scanf("%d", &input2);
+             printf("********************************************************************************************\n");
+             if (input2 == 1) {
+            printf("Baikkk.....Permainan dilanjutkan.\n");
+            printf("********************************************************************************************\n");
 
-            while (1) { 
-                printf("\nTekan angka untuk melanjutkan permainan, atau yang lain untuk keluar dari permainan: ");
-                scanf("%s", input);
-                if (isdigit(input[0])) { 
-                    break;
-                } else {
-                    return 0;
-                }
-            }
-    
-            for (int i = 0; i <= batas_level; i++) {
-                printf("\nLevel %d: %s\n", level, pertanyaans[pertanyaan_saat_ini].pertanyaan);
+            } else {
+            printf("Permainan Anda dibatalkan....\n");
+            printf("********************************************************************************************\n");
+            return 0;
+             }  
+             for (int i = 0; i <= batas_level; i++) {
+             printf("\nLevel %d: %s\n", level, pertanyaans[pertanyaan_saat_ini].pertanyaan);
 
             if(level == 1)
             {
@@ -221,7 +226,9 @@ int main(int manyArgc, char *argc[])
             if (jawaban[0] == 'A' || jawaban[0] == 'B' || jawaban[0] == 'C' || jawaban[0] == 'D') {
             } else {
                 printf("Jawaban yang anda masukkan tidak sesuai opsi jawaban.\n");
+                printf("********************************************************************************\n");
                 printf("Harap memasukkan jawaban sesuai dengan opsi jawaban ('A','B','C','D')\n");
+                printf("********************************************************************************\n");
                 continue; 
             }
         
@@ -236,28 +243,29 @@ int main(int manyArgc, char *argc[])
                     printf("********************************************************************************\n");
                     printf("Terima kasih telah bermain. Sampai jumpa lagi!\n");
                     printf("********************************************************************************\n");
-                    break;
+                    return 0;
                 }
             
                 printf("Apakah Anda ingin melanjutkan ke pertanyaan berikutnya? (y/n): ");
-                scanf(" %c", &masukkan);
+                scanf(" %c", &input1);
                 printf("********************************************************************************\n");
-                if (masukkan == 'y') {
+                
+                if (input1 == 'y') {
                     printf("Baiklah lanjut ke pertanyaan berikutnya..... \n");
                     printf("********************************************************************************\n");
-                } else if (masukkan == 'n') {
+                } else if (input1 == 'n') {
                     printf("Silakan istirahat sebentar dan kembali lagi nanti.\n");
                     printf("********************************************************************************\n");
                     break;   
                 } else {
                     printf("MAAF Input yang Anda berikan tidak valid!\n");
                     printf("Harap maukkan 'y' atau 'n' : ");
-                    scanf(" %c", &masukkan);
+                    scanf(" %c", &input1);
                     printf("********************************************************************************\n");
-                if(masukkan == 'y'){
+                if(input1 == 'y'){
                     printf("Baiklah, berikutnya pertanyaan...\n");
                     printf("********************************************************************************\n");
-                } else if (masukkan == 'n') {
+                } else if (input1 == 'n') {
                     printf("Silakan istirahat sebentar dan kembali lagi nanti.\n");
                     printf("********************************************************************************\n");
                     break;
@@ -265,8 +273,8 @@ int main(int manyArgc, char *argc[])
                     printf("Anda salah menginput sebanyak dua kali silahkan coba lagi nanti, terima kasih...\n");
                     printf("********************************************************************************\n");
                     return 0;
-                }
-            }   
+                    }
+                }   
             } else {
                 printf("Maaf, itu tidak benar. Jawaban yang benar adalah %s.\n", pertanyaans[pertanyaan_saat_ini].jawaban);
                 printf("********************************************************************************\n");
@@ -274,13 +282,9 @@ int main(int manyArgc, char *argc[])
                 printf("********************************************************************************\n");
                 break;
             }
-            }
-            } 
-            }
-            else {
-                printf("Anda Gagal login !\n");
-                printf("Perhatikan kembali username dan passsword yang anda mmasukkan !\n");
-            }
-    }
+        }
+    } 
+            
     return 0;
+    }
 }
