@@ -107,12 +107,12 @@ int main(int manyArgc, char *argc[])
             printf("                                       '---'        /    .'    |  | ,'        ;   :  .'    ;   |.' '   : |      |   :    /                               \n");
             printf("                                                     `---`     `--''          |   ,.'      '---'   ;   |.'      |_ _| .'                                 \n");                                                                                                                                            
 
-            printf("\nTekan angka manapun untuk melanjutkan permainan, atau huruf 'n' untuk membatalkan dari permainan: ");
+            printf("\nTekan angka manapun untuk melanjutkan permainan, atau huruf 'n' untuk membatalkan dari permainan : ");
             scanf("%s",&input1);
         
             if (isdigit(input1)) { 
             } else if (input1 == 'n' || input1 == 'N') { // menanyakan apakah pengguna yakin ingin keluar dari permainan
-                printf("\nApakah kamu yakin ingin keluar dari permainan? (Y/N): ");
+                printf("\nApakah kamu yakin ingin keluar dari permainan? (Y/N) : ");
                 scanf("%s", input);
                 if (input[0] == 'y' || input[0] == 'Y') {
                     return 0; //keluar dari permainan
@@ -122,23 +122,23 @@ int main(int manyArgc, char *argc[])
             }
 
             pertanyaan pertanyaans[15];
-            strcpy(pertanyaans[0].pertanyaan, "Siapa Pemenang piala dunia 2024?");
+            strcpy(pertanyaans[0].pertanyaan, "Siapa Pemenang piala dunia 2024 ?");
             strcpy(pertanyaans[0].jawaban, "A");
             pertanyaans[0].level = 1;
 
-            strcpy(pertanyaans[1].pertanyaan, "apa ibu kota dari india?");
+            strcpy(pertanyaans[1].pertanyaan, "apa ibu kota dari india ?");
             strcpy(pertanyaans[1].jawaban, "B");
             pertanyaans[1].level = 2;
 
-            strcpy(pertanyaans[2].pertanyaan, "Apa yang bisa dilihat sekali dalam satu menit, dua kali dalam satu momen, dan tidak terlihat dalam seribu tahun?");
+            strcpy(pertanyaans[2].pertanyaan, "Apa yang bisa dilihat sekali dalam satu menit, dua kali dalam satu momen, dan tidak terlihat dalam seribu tahun ?");
             strcpy(pertanyaans[2].jawaban, "D");
             pertanyaans[2].level = 3;
 
-            strcpy(pertanyaans[3].pertanyaan, "Apa nama danau terbesar di dunia?");
+            strcpy(pertanyaans[3].pertanyaan, "Apa nama danau terbesar di dunia ?");
             strcpy(pertanyaans[3].jawaban, "C");
             pertanyaans[3].level = 4;
 
-            strcpy(pertanyaans[4].pertanyaan, "Kota mana yang berjulik 'Crossroads of the pacific' dan 'The Big pineapple'?");
+            strcpy(pertanyaans[4].pertanyaan, "Kota mana yang berjulik 'Crossroads of the pacific' dan 'The Big pineapple' ?");
             strcpy(pertanyaans[4].jawaban, "D");
             pertanyaans[4].level = 5;
     
@@ -160,7 +160,6 @@ int main(int manyArgc, char *argc[])
             printf("\n\t\t    SELAMAT DATANG DI QUIZZ KELOMPOK VI  \n");
             printf("****************************************************************************************\n");
             printf("Kamu akan disediakan 5 pertanyaan dengan tingkat level yang berbeda,\n");
-            printf("****************************************************************************************\n");
             printf("dengan meningkatnya tingkat kesulitan saat Anda maju.\n");
             printf("****************************************************************************************\n");
             printf("Setiap jawaban yang benar akan memberi Anda poin sesuai dengan tingkat kesulitan soalnya\n");
@@ -168,20 +167,22 @@ int main(int manyArgc, char *argc[])
             printf("Selamat Bermain!!!!!\n");
             printf("****************************************************************************************\n");
 
-            printf("Masukkan angka 1 untuk masuk ke permainan atau yang lain untuk membatalkan permainan:");
+            printf("Masukkan angka 1 untuk masuk ke permainan atau yang lain untuk membatalkan permainan :");
             scanf("%d", &input2);
-             printf("********************************************************************************************\n");
-             if (input2 == 1) {
-            printf("Baikkk.....Permainan dilanjutkan.\n");
             printf("********************************************************************************************\n");
-
+            
+            if (input2 == 1) {
+                printf("\n");
+                printf("Permainan dilanjutkan.\n");
+                printf("********************************************************************************************\n\n");
             } else {
-            printf("Permainan Anda dibatalkan....\n");
-            printf("********************************************************************************************\n");
-            return 0;
-             }  
-             for (int i = 0; i <= batas_level; i++) {
-             printf("\nLevel %d: %s\n", level, pertanyaans[pertanyaan_saat_ini].pertanyaan);
+                printf("\n");
+                printf("Permainan Anda dibatalkan....\n");
+                printf("********************************************************************************************\n\n");
+                return 0;
+            }  
+            for (int i = 0; i <= batas_level; i++) {
+                printf("\nLevel %d: %s\n", level, pertanyaans[pertanyaan_saat_ini].pertanyaan);
 
             if(level == 1)
             {
@@ -189,35 +190,35 @@ int main(int manyArgc, char *argc[])
                 printf("B) Prancis \n");
                 printf("C) Arab Saudi\n");
                 printf("D) Indonesia\n");
-                printf("jawaban Anda: ");
+                printf("jawaban Anda : ");
             } else if (level == 2)
             {
                 printf("A) Mumbai \n");
                 printf("B) New Delhi \n");
                 printf("C) Maladew \n");
                 printf("D) Ankara\n");
-                printf("jawaban Anda: ");
+                printf("jawaban Anda : ");
             } else if (level == 3)
             {
                 printf("A) Huruf O \n");
                 printf("B) angka 1\n");
                 printf("C) huruf B \n");
                 printf("D) Huruf M\n");
-                printf("jawaban Anda: ");
+                printf("jawaban Anda : ");
             } else if(level == 4)
             {
                 printf("A) Danau Toba \n");
                 printf("B) Danau Baikal \n");
                 printf("C) Danau Kaspia \n");
                 printf("D) Danau Victoria\n");
-                printf("jawaban Anda: ");
+                printf("jawaban Anda : ");
             } else if(level == 5)
             {
                 printf("A) Rusia \n");
                 printf("B) Indonesia 1 \n");
                 printf("C) China \n");
                 printf("D) New York\n");
-                printf("jawaban Anda: ");
+                printf("jawaban Anda : ");
             }
 
             scanf("%s", jawaban);
@@ -233,7 +234,7 @@ int main(int manyArgc, char *argc[])
             }
         
             if (strcmp(jawaban, pertanyaans[pertanyaan_saat_ini].jawaban) == 0) {
-                printf("Benar! kamu mendapatkan $%d nilai.\n", level * 100);
+                printf("Benar <3! kamu mendapatkan $%d nilai.\n", level * 100);
                 score += level * 100;
                 level++;
                 pertanyaan_saat_ini++;
@@ -246,14 +247,16 @@ int main(int manyArgc, char *argc[])
                     return 0;
                 }
             
-                printf("Apakah Anda ingin melanjutkan ke pertanyaan berikutnya? (y/n): ");
+                printf("Apakah Anda ingin melanjutkan ke pertanyaan berikutnya? (y/n) : ");
                 scanf(" %c", &input1);
                 printf("********************************************************************************\n");
                 
                 if (input1 == 'y') {
+                    printf("\n");
                     printf("Baiklah lanjut ke pertanyaan berikutnya..... \n");
                     printf("********************************************************************************\n");
                 } else if (input1 == 'n') {
+                    printf("\n");
                     printf("Silakan istirahat sebentar dan kembali lagi nanti.\n");
                     printf("********************************************************************************\n");
                     break;   
@@ -263,13 +266,16 @@ int main(int manyArgc, char *argc[])
                     scanf(" %c", &input1);
                     printf("********************************************************************************\n");
                 if(input1 == 'y'){
+                    printf("\n");
                     printf("Baiklah, berikutnya pertanyaan...\n");
                     printf("********************************************************************************\n");
                 } else if (input1 == 'n') {
+                    printf("\n");
                     printf("Silakan istirahat sebentar dan kembali lagi nanti.\n");
                     printf("********************************************************************************\n");
                     break;
                 } else {
+                    printf("\n");
                     printf("Anda salah menginput sebanyak dua kali silahkan coba lagi nanti, terima kasih...\n");
                     printf("********************************************************************************\n");
                     return 0;
