@@ -86,7 +86,8 @@ int main(int manyArgc, char *argc[])
             printf("*****************************\n");
         }  else {
                 printf("Anda Gagal login !\n");
-                printf("Perhatikan kembali username dan passsword yang anda mmasukkan !\n");
+                printf("Perhatikan kembali username dan passsword yang anda mmasukkan !\n\n");
+                return 0;
          }
             int input[0];
             char input1;
